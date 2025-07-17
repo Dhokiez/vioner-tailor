@@ -1,0 +1,1201 @@
+/*Home */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-poppins);
+    background-color:rgba(248, 248, 248, 0.96);
+    background-image: url('/images/pattern.jpg');
+    background-size: cover;
+    background-position: center center; /* Tambahan: agar gambar selalu berpusat */
+    background-attachment: fixed; /* Tambahan: agar gambar tetap di belakang saat scroll */
+    background-blend-mode: overlay; /* Tambahan: untuk efek overlay */
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 170px; /* Memberikan ruang untuk header tetap terlihat */
+}
+
+.container {
+    max-width: 800px; /* Lebar maksimal 800px, tapi bisa menyusut */
+    width: 90%;       /* Mengisi 90% lebar layar di perangkat kecil */
+    margin: 0 auto;   /* Untuk menengahkan kontainer */
+}
+
+main {
+    flex-grow: 1; /* Membuat main mengambil sisa ruang */
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair);
+}
+
+/* Utility classes untuk font */
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+header {
+    background: linear-gradient(45deg, #800000, #0A0A0A);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Animasi opacity */
+}
+
+header.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* logo 1 */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo-container img {
+    width: 150px;
+    height: auto;
+}
+
+.logo-header {
+    height: 80px;
+    margin-right: 20px;
+}
+
+/* logo home */
+.logo {
+    max-width: 100%;
+    height: auto;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+/* Teks Home */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* About uS */
+#tentang {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5); /* Putih semi-transparan */
+    backdrop-filter: blur(10px); /* Efek blur pada background di belakangnya */
+    -webkit-backdrop-filter: blur(10px); /* Untuk support browser Safari */
+   border: 1px solid rgba(139, 0, 0, 0.5); /* Border merah marun semi-transparan */
+}
+
+.tentang-kami {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.tentang-kami h2 {
+    font-family: var(--font-playfair); /* Menggunakan variabel font Playfair Display */
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tentang-kami .deskripsi {
+    border: 2px solid #8b0000;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fafafa;
+}
+
+.tentang-kami .deskripsi h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1.2rem
+}
+
+.tentang-kami p {
+    font-family: var(--font-lora); /* Menggunakan variabel font Lora */
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.tentang-kami .box {
+    padding: 30px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==== NAVIGASI ==== */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav a {
+    font-family: var(--font-poppins); /* Menggunakan variabel font Poppins */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/* Tombol btn */
+.btn {
+    background-color: rgb(117, 5, 5);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0px transparent;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #A47538;
+    transform: scale(1.04);
+    box-shadow: 0 0 10px rgba(200, 150, 80, 0.6);
+    border-color: rgb(137, 44, 44);
+}
+
+.btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+/* Slider */
+.slider-container {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* <-- Rasio widescreen */
+  margin-bottom: 40px;
+}
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px; /* Beri sudut sedikit melengkung */
+  overflow: hidden;
+}
+
+/* Mengubah warna panah navigasi dan titik pagination agar cocok dengan tema */
+.swiper-button-next,
+.swiper-button-prev {
+  color:rgb(255, 0, 0) !important; /* Ganti warna panah menjadi putih */
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.swiper-pagination-bullet-active {
+  background:rgb(255, 0, 0) !important; /* Ganti warna titik aktif menjadi putih */
+}
+
+.page-title {
+  font-family: var(--font-playfair);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Layanan */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Styling untuk ServiceBox */
+.layanan-box {
+    background-color: #fff;
+    padding: 20px; /* Menambah padding untuk memberi jarak di dalam box */
+    border: 2px solid #800000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    width: 100%; /* Pastikan box mengambil lebar penuh */
+    margin-bottom: 20px; /* Memberikan jarak antar box */
+}
+
+/* Saat box terlihat, buat ia muncul */
+.layanan-box.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Untuk elemen <h2> yang berisi judul */
+.layanan-box.is-visible h2 {
+    font-size: 1.4rem; /* Ukuran font judul */
+    margin-bottom: 10px; /* Memberikan jarak bawah dari judul */
+}
+
+/* Untuk elemen <p> yang berisi deskripsi */
+.layanan-box.is-visible p {
+    font-family: var(--font-poppins);
+    font-size: 1.125rem; /* Ukuran font deskripsi */
+    color: #555;
+    margin-bottom: 15px; /* Memberikan jarak bawah dari deskripsi */
+}
+
+/* Tambahkan efek hover */
+.layanan-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(193, 186, 186, 0.88);
+}
+
+/* Styling untuk elemen harga */
+.service-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e74c3c;  /* Warna merah atau sesuai desain */
+    margin-top: 10px; /* Memberikan jarak di atas harga */
+    margin-bottom: 0; /* Pastikan tidak ada jarak bawah jika tidak perlu */
+}
+
+
+/* Kontak */
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.map-container iframe {
+    width: 80%;
+    max-width: 600px;
+    height: 450px;
+    border: 0;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.contact-container p {
+    font-size: 1.1rem;
+    margin: 5px;
+}
+
+.contact-container h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 0px 10px;
+}
+
+/* Styling untuk grup ikon kontak */
+.contact-icon-group {
+  display: flex;
+  gap: 20px; /* Jarak antar ikon */
+  margin-top: 20px;
+}
+
+/* Style dasar untuk setiap tombol ikon */
+.contact-icon-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;  /* Lebar tombol */
+  height: 60px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuatnya menjadi bulat */
+  font-size: 32px; /* Ukuran ikon di dalamnya */
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-icon-button:hover {
+  transform: scale(1.1); /* Sedikit membesar saat disentuh mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Warna latar belakang spesifik */
+.whatsapp-bg {
+  background-color: #25D366; /* Hijau WhatsApp */
+}
+
+.email-bg {
+  background-color: #c71610; /* Merah Email (seperti Gmail) */
+}
+
+/* Styling untuk FAQ */
+.faq-container {
+  margin-top: 40px;
+  border: 1px solid #800000;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 800px; /* Menambahkan lebar maksimal untuk menghindari box terlalu lebar */
+  margin-left: auto;
+  margin-right: auto; /* Menyeimbangkan posisi FAQ di tengah */
+}
+
+.faq-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  border-bottom: 2px solid #ddd; /* Menambahkan garis bawah untuk pemisah */
+  padding-bottom: 10px; /* Menambahkan jarak bawah pada judul */
+}
+
+.faq-item {
+  background-color: white;
+  border: 2px solid #800000;
+  padding: 20px; /* Menambah padding agar teks tidak terlalu rapat */
+  margin-bottom: 20px; /* Menambah jarak antar FAQ */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 750px; /* Membatasi lebar box FAQ */
+  margin-left: auto;
+  margin-right: auto; /* Menyeimbangkan FAQ item */
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+}
+
+.faq-item h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px; /* Memberikan ruang lebih antara judul dan isi */
+  font-weight: bold; /* Menebalkan teks judul agar lebih jelas */
+}
+
+.faq-item p {
+  font-size: 16px; /* Sedikit memperbesar ukuran font agar lebih mudah dibaca */
+  color: #555;
+  line-height: 1.6; /* Memperbaiki jarak antar baris agar lebih terbaca */
+}
+
+/*GALERI */
+.galeri {
+    text-align: center; /* Mengatur teks di tengah */
+}
+
+.galeri h2 {
+    font-size: 1.6rem; /* Lebih kecil dan proporsional */
+    margin-bottom: 10px;
+}
+
+.galeri p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+/* Gambar di dalam galeri */
+.gallery-carousel-container {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.gallery-swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.gallery-swiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 280px; /* Lebar setiap slide */
+  height: 350px; /* Tinggi setiap slide */
+}
+
+/* Aturan untuk gambar-box di dalam slide */
+.gallery-swiper .swiper-slide .gambar-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.gallery-swiper .swiper-slide .gambar-box img {
+  display: block;
+  width: 100%;
+  height: 80%; /* Gambar mengisi 80% tinggi, sisa 20% untuk judul */
+  object-fit: cover;
+}
+
+.gallery-swiper .swiper-slide .gambar-box h3 {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 15px;
+  margin: 0;
+  background-color: #f1f1f1;
+  color: #333;
+  text-align: center;
+  height: 10%; /* Judul mengisi sisa 20% tinggi */
+}
+
+/* Panah navigasi */
+.gallery-swiper .swiper-button-next,
+.gallery-swiper .swiper-button-prev {
+  width: 50px;   /* Perbesar dari ukuran default */
+  height: 50px;  /* Perbesar dari ukuran default */
+  background: rgba(255, 255, 255, 0); /* Latar belakang putih semi-transparan */
+  border-radius: 70%; /* Membuatnya menjadi bulat */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  --swiper-navigation-size: 24px; /* Perbesar ukuran ikon panah di dalam tombol */
+  color:rgb(255, 0, 0) !important; /* Warna merah marun */
+  font-weight: 1000; /* membuatnya tebal */
+}
+
+/* Ubah warna pagination */
+.gallery-swiper .swiper-pagination-bullet-active {
+  background: #800000 !important;
+}
+
+/* 3. Geser posisi panah sedikit ke luar */
+.gallery-swiper .swiper-button-prev {
+  left: -10px; /* Geser panah kiri ke luar area gambar */
+}
+.gallery-swiper .swiper-button-next {
+  right: -10px; /* Geser panah kanan ke luar area gambar */
+}
+
+/* 4. Efek hover agar lebih interaktif */
+.gallery-swiper .swiper-button-next:hover,
+.gallery-swiper .swiper-button-prev:hover {
+  background:rgba(0, 0, 0, 0.18); /* Latar menjadi putih solid */
+  transform: scale(1.1); /* Sedikit membesar */
+}
+
+/* Tab Galeri */
+/* Styling untuk setiap bagian kategori di halaman galeri */
+.category-section {
+  margin-top: 60px; /* Jarak besar antar kategori */
+  margin-bottom: 60px;
+}
+
+.category-title {
+  font-family: var(--font-playfair);
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd; /* Garis pemisah tipis */
+  padding-bottom: 15px;
+}
+
+.testimoni {
+    text-align: left ; /* Mengatur teks di kiri */
+    margin-left: 20px; /* Memberi jarak kiri */
+}
+
+/* Form Pemesanan */
+form {
+    border: 3px solidrgb(106, 17, 17);  /* Menambahkan border merah pada pembungkus form */
+    padding: 20px;              /* Memberikan ruang di dalam form */
+    border-radius: 10px;        /* Membuat sudut border membulat */
+    background-color: #f9f9f9; /* Memberikan warna latar belakang untuk kontras */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan ringan */
+}
+
+.pesan {
+    background-color: white;
+    padding: 30px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pesan h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #800000;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: none; /* Menghilangkan resize pada textarea */
+    padding-top: 10px; /* Memberikan ruang di atas input untuk label */
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #800000; /* Warna border berubah */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Efek bayangan ringan */
+    outline: none; /* Menghilangkan outline default */
+}
+
+section.pesan:hover {
+    transform: translateY(-5px);
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    /* PINDAHKAN TRANSISI KE SINI dan gunakan 'all' */
+    transition: all 0.25s ease-out; 
+}
+
+/* Aturan saat kursor diarahkan ke tombol */
+form button:hover {
+    background-color: #a52a2a;
+    
+    /* KECILKAN NILAI SCALE menjadi lebih subtil */
+    transform: scale(1.02); 
+    
+    /* Tambahan (opsional): beri sedikit bayangan agar terlihat terangkat */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+form button:active {
+    transform: scale(0.95); /* Efek klik mengecil */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan halus */
+    transition: transform 0.1s ease;
+}
+
+/* Menu Ikon berger */
+.menu-icon {
+  /* menambahkan styling tambahan*/
+  font-size: 28px;                    /* Ukuran ikon */
+  display: block;                     /* Tampilkan ikon dalam kotak untuk interaksi */
+  align-items: center;                /* Vertikal center */
+  color: #fff;                        /* Menyeting warna ikon */
+  cursor: pointer;                   /* Menunjukkan bahwa ini bisa diklik */
+  transition: transform 0.3s ease;    /* Menambahkan animasi saat ikonnya berubah */
+  padding: 10px;                      /* Memberikan ruang pada ikon */
+  z-index: 100;                       /* Agar ikon di atas menu */
+  width: 40px;                        /* Menentukan lebar area klik */
+  height: 40px;                       /* Menentukan tinggi area klik */
+  display: none;                        /* Sembunyikan ikon di desktop */
+  justify-content: center;           /* Mengatur konten di dalam ikon agar rata tengah */
+  align-items: center;         /* Mengatur konten di dalam ikon agar rata tengah */
+}
+
+.menu-icon-button {
+  display: none; /* Sembunyikan di desktop, sama seperti sebelumnya */
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1001; /* Pastikan di atas elemen lain */
+  transition: transform 0.3s ease-in-out; /* Untuk animasi berputar */
+}
+
+/* 2. Styling untuk setiap garis (<span>) */
+.menu-icon-button span {
+  display: block;
+  position: absolute;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  left: 6px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* 3. Posisi awal setiap garis (membentuk ikon hamburger) */
+.menu-icon-button span:nth-child(1) {
+  transform: translateY(-8px);
+}
+
+.menu-icon-button span:nth-child(3) {
+  transform: translateY(8px);
+}
+
+/* 4. Animasi saat tombol memiliki class 'is-open' */
+
+/* Membuat seluruh tombol berputar sedikit */
+.menu-icon-button.is-open {
+  transform: rotate(180deg);
+}
+
+/* Garis atas akan pindah ke tengah dan berputar 45 derajat */
+.menu-icon-button.is-open span:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+/* Garis tengah menghilang (fade out) */
+.menu-icon-button.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+/* Garis bawah akan pindah ke tengah dan berputar -45 derajat */
+.menu-icon-button.is-open span:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to bottom right, #800000, #0A0A0A);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.site-footer {
+  background-color: #1a1a1a; /* Warna latar belakang gelap */
+  color:rgb(255, 255, 255); /* Warna teks abu-abu terang */
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+/* Kontainer untuk 3 kolom */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; /* Jarak antar kolom */
+  flex-wrap: wrap; /* Agar kolom turun ke bawah di layar kecil */
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.footer-column {
+  flex: 1; /* Membuat setiap kolom memiliki lebar yang sama */
+  min-width: 220px; /* Lebar minimum sebelum kolom turun ke baris baru */
+}
+
+.footer-column h4 {
+  font-family: var(--font-playfair);
+  color:rgb(255, 255, 255); /* Warna merah untuk judul kolom */
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-column p {
+  line-height: 1.7;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ffd700; /* Warna kuning saat hover */
+}
+
+/* Garis pemisah */
+.footer-divider {
+  border: 0;
+  border-top: 4px solid rgba(179, 7, 7, 0.26); /* Dibuat lebih terang */
+  /* Atur jarak atas dan bawah menjadi sama (25px) agar seimbang */
+  margin: 25px auto; 
+  max-width: 1200px; /* Lebar maksimum garis */
+}
+
+/* Bagian copyright */
+.footer-bottom {
+  color:rgb(255, 255, 255);
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Akun */
+.auth-container {
+  display: flex;
+  justify-content: center; /* Menengahkan horizontal */
+  align-items: center;     /* Menengahkan vertikal */
+  width: 100%;
+  flex-grow: 1; /* Suruh pembungkus ini untuk mengisi sisa ruang di <main> */
+}
+
+/* form login */
+.login-container {
+  /* Properti WAJIB untuk animasi bar */
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px; /* Memberikan jarak atas */
+  /* Properti untuk tampilan */
+  width: 350px; /* Sedikit lebih lebar agar tidak sempit */
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Aturan untuk bar animasi Framer Motion */
+.animated-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 6px;
+  background: linear-gradient(
+    90deg, 
+    #800000, 
+    #a52a2a, 
+    #800000,
+    #a52a2a,
+    #800000
+  );
+}
+
+/* Aturan untuk elemen-elemen di dalam login container */
+.login-container .hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.login-container .hero-img img {
+  max-width: 200px;         /* Ukuran maksimum gambar */
+  max-height: 200px;        /* Ukuran maksimum gambar */
+  width: 180px;              /* Menjaga proporsi gambar */
+  height: 180px;             /* Menjaga proporsi gambar */
+  object-fit: contain;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+   width: 100%;
+   padding: 0.5rem;
+   margin-bottom: 1rem;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: #a52a2a;
+  box-shadow: 0 0 0 3px rgba(165, 42, 42, 0.2);
+}
+
+.login-container button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #800000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-container button:hover {
+  background: #a52a2a;
+  transform: scale(1.02);
+}
+
+.login-container p {
+  text-align: center;
+}
+
+    /* form register */
+    .register-container {
+   /* Properti WAJIB untuk animasi bar */
+  position: relative; 
+  overflow: hidden; /* Memberikan ruang untuk animasi bar */
+  margin-top: 20px; /* Memberikan jarak atas */
+  /* Properti untuk tampilan */
+  width: 350px; /* Sedikit lebih lebar agar tidak sempit */
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Styling untuk kontainer hero (gambar logo) */
+.register-container .hero-img {
+    display: flex;            /* Menggunakan flexbox untuk pemusatan */
+    justify-content: center;  /* Memusatkan gambar secara horizontal */
+    align-items: center;      /* Memusatkan gambar secara vertikal */
+    margin-bottom: 2rem;      /* Memberikan jarak antara logo dan form */
+}
+
+/* Styling untuk gambar logo */
+.register-container .hero-img img {
+    max-width: 200px;         /* Ukuran maksimum gambar */
+    max-height: 200px;        /* Ukuran maksimum gambar */
+    width: 180px;              /* Menjaga proporsi gambar */
+    height: 180px;             /* Menjaga proporsi gambar */
+    object-fit: contain;      /* Menjaga gambar tetap proporsional */
+}
+
+
+/* Styling untuk judul form */
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Styling untuk label input */
+.register-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Styling untuk input (username, email, password) */
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+}
+
+/* Styling untuk tombol submit */
+.register-container button {
+        width: 100%;
+            padding: 0.5rem;
+            background: #800000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+.register-container input:focus {
+  outline: none;
+  border-color: #a52a2a;
+  box-shadow: 0 0 0 3px rgba(165, 42, 42, 0.2);
+}
+
+/* Efek hover untuk tombol submit */
+.register-container button:hover {
+    background: #a52a2a;
+}
+
+.register-container p {
+  text-align: center;
+}
+
+
+/* Responsiveness */
+@media only screen and (max-width: 768px) {
+    /* Mengatasi tampilan agar beraturan dimobile */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+      outline: none;
+      -webkit-tap-highlight-color: transparent; /* Menghilangkan highlight di touch devices */
+    }
+
+    /* pengaturan agar lebar layar rensponsif dimobile */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        padding-top: 140px; /* sesuaikan dengan tinggi header di mobile */
+    }
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo-container {
+        position: relative;
+        left: 53%;                 /* Geser logo ke kanan */
+        top: 10px;                 /* Geser logo ke bawah */
+        transform: translateX(-50%);
+        margin-left: 0; /* ubah jadi nol supaya tidak over-push */
+    }
+
+    .btn {
+        -webkit-tap-highlight-color: transparent; /* Hilangkan highlight di iOS/Android */
+    }
+    
+
+    section.pesan {
+        padding: 20px;
+        margin: 20px;
+        max-width: 100%;
+    }
+
+    nav ul li {
+        display: block; /* Ubah menjadi block untuk tampilan mobile */
+        flex-wrap: wrap;
+        margin: 10px 0; /* aman untuk mobile */
+    }
+
+
+   .hidden {
+  display: none; /* Sembunyikan menu di mobile */
+}
+
+      .deskripsi {
+        text-align: left !important; /* paksa override di mobile */
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+        word-spacing: normal;   
+        letter-spacing: normal;
+        box-sizing: border-box;
+        max-width: 100%; /* Pastikan box tidak lebih lebar dari layar */
+        word-break: break-word; /* agar kata tidak meluber */
+    }
+
+    .tulisan-tentang {
+        font-size: 1.2rem; /* Ukuran font lebih kecil di mobile */
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .tentang-kami p {
+    text-align: left !important;   /* Atasi justify yang kacau */
+    font-size: 16px;               /* Lebih ramah di layar kecil */
+    line-height: 1.6;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+
+  .tentang-kami .box {
+    padding: 15px;                 /* Kurangi padding agar tidak terlalu sempit */
+    margin: 10px auto;           /* Pusatkan box */
+    max-width: 100%;           /* Pastikan box tidak lebih lebar dari layar */
+    box-sizing: border-box;       /* Pastikan padding tidak menambah lebar */
+  }
+
+  /* Menu Icon - Ikon menu utama */
+.menu-icon {
+    display: flex; /* Tampilkan ikon menu */
+    align-items: center; /* Vertikal center */
+    -webkit-tap-highlight-color: transparent; /* Hilangkan highlight di iOS/Android */
+    outline: none; /* Hilangkan garis fokus */
+    user-select: none; /* Mencegah seleksi teks */
+    transition: transform 0.3s ease; /* Menambahkan animasi saat ikonnya berubah */
+}
+
+/* Button yang berisi ikon menu */
+.menu-icon-button {
+    display: flex; /* Tampilkan ikon di mobile */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fokus saat ikon menu diberi fokus (di keyboard atau tap) */
+.menu-icon:focus {
+    outline: none; /* Hilangkan garis fokus saat ikonnya diberi fokus */
+    box-shadow: none; /* Hilangkan bayangan saat fokus */
+}
+
+/* Hilangkan highlight saat menu ikon ditekan di perangkat mobile */
+.menu-icon:active {
+    outline: none !important; /* Pastikan outline hilang saat aktif */
+    box-shadow: none !important; /* Pastikan bayangan hilang saat aktif */
+}
+
+/* Pastikan agar tidak ada outline saat ikon diberi fokus pada perangkat lain */
+.menu-icon:focus-visible {
+    outline: none !important; /* Hilangkan outline ketika fokus secara visible */
+    box-shadow: none !important; /* Hilangkan bayangan */
+}
+
+
+     .slider-container {
+    aspect-ratio: 4 / 3;  /* Ubah rasio aspek untuk perangkat mobile */
+    margin-bottom: 20px;  /* Mengurangi margin bawah pada perangkat mobile */
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 36px;  /* Ukuran panah lebih kecil pada perangkat mobile */
+    height: 36px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;  /* Mengurangi ukuran bullet pagination */
+    height: 8px;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 10px;  /* Mengatur ukuran bullet aktif lebih besar */
+    height: 10px;
+  }
+
+  .page-title {
+    font-size: 1.5rem;  /* Menurunkan ukuran font judul di perangkat mobile */
+  }
+
+   .container {
+    padding: 20px;
+    max-width: 100%; /* Menghapus batas lebar untuk layar kecil */
+  }
+
+  .layanan-box {
+    width: 100%; /* Menjamin box mengambil lebar penuh */
+    padding: 12px; /* Padding lebih besar pada layar kecil */
+  }
+
+  .layanan-box h2 {
+    font-size: 1.2rem; /* Mengurangi ukuran font untuk judul */
+  }
+
+  .layanan-box p {
+    font-size: 0.9rem; /* Mengurangi ukuran font untuk deskripsi */
+  }
+
+   .gallery-swiper .swiper-button-prev {
+    left: 5px;
+  }
+  .gallery-swiper .swiper-button-next {
+    right: 5px;
+  }
+
+  /* Footer */
+  footer.site-footer {
+      font-size: 14px;
+      padding: 30px 20px;
+    }
+ .footer-content {
+    display: grid;
+    /* INI KUNCI RESPONSIVITASNYA */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px; /* Jaraknya kita kurangi dan buat sama untuk semua arah */
+    text-align: left; /* Atur teks ke kiri untuk mobile */
+}
+
+  .footer-column:first-child {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+    .faq-container {
+    padding: 15px;
+  }
+
+  .faq-item {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .faq-item h3 {
+    font-size: 16px; /* Mengurangi ukuran font pada mobile */
+  }
+
+  .faq-item p {
+    font-size: 14px; /* Mengurangi ukuran font pada mobile */
+  }
+}
